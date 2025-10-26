@@ -1,0 +1,2520 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Keyla y Sergio — ¡Nos Casamos!</title>
+
+  
+  <link rel="preload" as="image" href="./images/3ba98149-94bc-4e2a-bde1-ab1f60e01196.jpeg" fetchpriority="high">
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1C2538;          
+      --secondary: #F1EFE9;        
+      --accent: #B79540;           
+      --accent-light: #D6B878;     
+      --accent-dark: #996F2A;      
+      --royal-blue: #313B60;       
+      --text-light: #1C2538;       
+      --text-muted: #313B60;       
+      --white: #ffffff;
+      --cream: #F1EFE9;            
+      --navy-overlay: rgba(28, 37, 56, 0.9);     
+      --gold-overlay: rgba(183, 149, 64, 0.1);   
+      --shadow-light: 0 1px 3px rgba(28, 37, 56, 0.04);
+      --shadow-medium: 0 2px 6px rgba(28, 37, 56, 0.06);
+      --shadow-heavy: 0 4px 10px rgba(28, 37, 56, 0.08);
+      --gradient-primary: linear-gradient(135deg, #B79540 0%, #D6B878 50%, #B79540 100%);
+      --gradient-navy: linear-gradient(135deg, #1C2538 0%, #313B60 100%);
+      --gradient-overlay: linear-gradient(135deg, rgba(28, 37, 56, 0.2) 0%, rgba(49, 59, 96, 0.3) 100%);
+      --max-width: 1200px;
+      --border-radius: 12px;
+      --transition: all 0.15s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeSpeed;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--primary);
+      background: var(--secondary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      
+      overflow-y: scroll;
+    }
+
+    
+    body.no-scroll {
+      overflow: hidden;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    
+    .section {
+      content-visibility: auto;
+      contain-intrinsic-size: 600px;
+      contain: layout style paint;
+    }
+
+    
+    .hero, .nav {
+      content-visibility: visible;
+    }
+
+    
+    .font-display {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .font-script {
+      font-family: 'Dancing Script', cursive;
+    }
+
+    
+    
+    .hero, .nav, .gallery-item, .countdown-card,
+    .letter-image, .aaron-message-card,
+    .detail-card, .social-network-card,
+    .hashtag-card, .money-gift-card {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      perspective: 1000px;
+      will-change: transform;
+    }
+
+    
+    .hero-content > * {
+      will-change: transform, opacity;
+      transform: translateZ(0);
+    }
+
+    
+    .section {
+      contain: layout style paint;
+    }
+
+    
+    .gallery-item, .detail-card, .countdown-card,
+    .social-network-card, .hashtag-card, .money-gift-card {
+      box-shadow: 
+        0 2px 4px rgba(28, 37, 56, 0.1),
+        0 1px 2px rgba(28, 37, 56, 0.06);
+    }
+
+    
+    .nav {
+      transform: translateY(-100%) translateZ(0);
+      transition: transform 0.15s ease-out;
+    }
+
+    .nav.visible {
+      transform: translateY(0) translateZ(0);
+    }
+
+    
+    .gallery-item img {
+      transform: translateZ(0);
+      will-change: transform;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.02) translateZ(0);
+    }
+
+    
+    .countdown-number {
+      will-change: contents;
+      font-variant-numeric: tabular-nums;
+      transform: translateZ(0);
+    }
+
+    
+    .letter-image {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .animated-mail {
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px) translateZ(0);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+      }
+    }
+
+    @keyframes welcomeTextIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px) translateZ(0);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+      }
+    }
+
+    
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(241, 239, 233, 0.98);
+      border-bottom: 1px solid var(--accent-light);
+      transform: translateY(-100%) translateZ(0);
+      transition: transform 0.15s ease-out;
+      box-shadow: 0 1px 4px rgba(28, 37, 56, 0.08);
+      
+      backface-visibility: hidden;
+    }
+
+    .nav.visible {
+      transform: translateY(0) translateZ(0);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+      transform: translateZ(0);
+    }
+
+    .nav-logo:hover {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      padding: 0.5rem 0;
+      transition: var(--transition);
+      transform: translateZ(0);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: var(--transition);
+      transform: translateZ(0);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 700px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: url('./images/3ba98149-94bc-4e2a-bde1-ab1f60e01196.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: var(--white);
+      text-align: center;
+      overflow: hidden;
+      
+      transform: translateZ(0);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(28, 37, 56, 0.2) 0%, rgba(49, 59, 96, 0.3) 100%);
+      z-index: 1;
+      transform: translateZ(0);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 2rem;
+      transform: translateZ(0);
+    }
+
+    .hero-date {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: rgba(28, 37, 56, 0.8);
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(214, 184, 120, 0.6);
+      animation: fadeInUp 1s ease-out 0.5s both;
+      color: var(--white);
+      transform: translateZ(0);
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease-out 0.7s both;
+      color: var(--white);
+      transform: translateZ(0);
+    }
+
+    .hero-script {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      color: var(--white);
+      margin-bottom: 2rem;
+      animation: fadeInUp 1s ease-out 0.9s both;
+      transform: translateZ(0);
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1s ease-out 1.1s both;
+      transform: translateZ(0);
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--gradient-primary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      transition: var(--transition);
+      box-shadow: var(--shadow-medium);
+      animation: fadeInUp 1s ease-out 1.3s both;
+      transform: translateZ(0);
+    }
+
+    .hero-cta:hover {
+      box-shadow: var(--shadow-heavy);
+      opacity: 0.9;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      z-index: 2;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator::after {
+      content: '';
+      width: 2px;
+      height: 3rem;
+      background: linear-gradient(to bottom, var(--white), transparent);
+      display: block;
+      margin: 0 auto;
+      transform: translateZ(0);
+    }
+
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0) translateZ(0);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-10px) translateZ(0);
+      }
+      60% {
+        transform: translateX(-50%) translateY(-5px) translateZ(0);
+      }
+    }
+
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      
+      .scroll-indicator {
+        animation: none;
+      }
+    }
+
+    
+    .welcome-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(28, 37, 56, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+      transform: translateZ(0);
+    }
+
+    .welcome-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .welcome-text {
+      color: var(--white);
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 4rem);
+      font-weight: 300;
+      margin-bottom: 2rem;
+      animation: welcomeTextIn 2s ease-out forwards;
+      opacity: 0;
+      transform: translateZ(0);
+    }
+
+    .welcome-subtext {
+      color: var(--accent-light);
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      animation: welcomeTextIn 2s ease-out 0.5s forwards;
+      opacity: 0;
+      transform: translateZ(0);
+    }
+
+    
+    .parents-blessing-section {
+      background: var(--white) !important;
+      opacity: 1 !important;
+      transform: none !important;
+      position: relative;
+    }
+
+    .parents-blessing-section .section-title {
+      color: var(--primary);
+      font-size: 3rem;
+      text-align: center;
+      line-height: 1.3;
+      max-width: 800px;
+      margin: 0 auto;
+      transform: translateZ(0);
+    }
+
+    .parents-blessing-section .section-title strong {
+      color: var(--accent);
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .parents-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      margin-top: 5rem;
+      align-items: center;
+    }
+
+    .parents-side {
+      text-align: center;
+      position: relative;
+      transform: translateZ(0);
+    }
+
+    .parents-image {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 2rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid var(--accent-light);
+      box-shadow: var(--shadow-medium);
+      transform: translateZ(0);
+    }
+
+    .parents-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translateZ(0);
+    }
+
+    .parents-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      transform: translateZ(0);
+    }
+
+    .parent-names {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .parent-name {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.5rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin: 0;
+      transform: translateZ(0);
+    }
+
+    
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+      margin-top: 4rem;
+    }
+
+    #story {
+      background: var(--cream) !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .story-content h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      transform: translateZ(0);
+    }
+
+    .story-content p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      transform: translateZ(0);
+    }
+
+    .story-image {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-medium);
+      border: 3px solid var(--accent-light);
+      transform: translateZ(0);
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+      transform: translateZ(0);
+    }
+
+    
+    .gallery {
+      margin-top: 4rem;
+    }
+
+    #gallery {
+      background: var(--white) !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: var(--shadow-light);
+      contain: layout style paint;
+      transform: translateZ(0);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.2s ease;
+      transform: translateZ(0);
+    }
+
+    .gallery-item:hover img {
+      opacity: 0.9;
+    }
+
+    
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    #details {
+      background: var(--cream) !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .detail-card {
+      background: var(--white);
+      padding: 3rem 2.5rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      box-shadow: var(--shadow-light);
+      border: 2px solid var(--accent-light);
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+      transition: transform 0.2s ease;
+    }
+
+    .detail-card:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .detail-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: translateZ(0);
+    }
+
+    .detail-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 2rem;
+      color: var(--accent-light);
+      box-shadow: var(--shadow-medium);
+      border: 3px solid var(--accent-light);
+      transform: translateZ(0);
+    }
+
+    .detail-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      transform: translateZ(0);
+    }
+
+    .detail-card p {
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+      transform: translateZ(0);
+    }
+
+    .detail-card .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    
+    .countdown-section {
+      background: var(--cream) !important;
+      color: var(--primary);
+      position: relative;
+      overflow: hidden;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .countdown-section .section-header {
+      position: relative;
+      z-index: 2;
+    }
+
+    .countdown-section .section-title {
+      color: var(--primary);
+      font-size: 3.5rem;
+      transform: translateZ(0);
+    }
+
+    .countdown-section .section-subtitle {
+      color: var(--primary);
+      font-size: 1.3rem;
+      opacity: 0.9;
+      transform: translateZ(0);
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin: 4rem 0;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .countdown-card {
+      background: var(--white);
+      border: 3px solid var(--primary);
+      border-radius: 20px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      min-width: 120px;
+      box-shadow: var(--shadow-medium);
+      transform: translateZ(0);
+      transition: transform 0.2s ease;
+    }
+
+    .countdown-card:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .countdown-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+      transform: translateZ(0);
+    }
+
+    .countdown-label {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transform: translateZ(0);
+    }
+
+    .countdown-separator {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      transform: translateZ(0);
+    }
+
+    .countdown-message {
+      text-align: center;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .countdown-message p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: var(--accent-light);
+      transform: translateZ(0);
+    }
+
+    
+    .social-memories-section {
+      background: var(--white) !important;
+      position: relative;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .social-memories-section .section-title {
+      color: var(--primary);
+      font-size: 3rem;
+      transform: translateZ(0);
+    }
+
+    .social-memories-section .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+      transform: translateZ(0);
+    }
+
+    .hashtag-container {
+      display: flex;
+      justify-content: center;
+      margin: 4rem 0;
+    }
+
+    .hashtag-card {
+      background: var(--gradient-primary);
+      padding: 3rem 4rem;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: var(--shadow-medium);
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+      transition: transform 0.2s ease;
+    }
+
+    .hashtag-card:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .hashtag-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .hashtag-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .copy-hashtag-btn {
+      background: var(--white);
+      color: var(--primary);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transform: translateZ(0);
+    }
+
+    .copy-hashtag-btn:hover {
+      background: var(--accent-light);
+    }
+
+    .copy-icon {
+      font-size: 1.2rem;
+    }
+
+    .social-networks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .social-network-card {
+      background: var(--white);
+      border-radius: var(--border-radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-medium);
+      border: 3px solid transparent;
+      cursor: pointer;
+      position: relative;
+      transform: translateZ(0);
+      transition: transform 0.2s ease;
+    }
+
+    .social-network-card:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .facebook-card {
+      border-color: #1877F2;
+      background: linear-gradient(135deg, #1877F2 0%, #42A5F5 100%);
+      color: var(--white);
+    }
+
+    .instagram-card {
+      border-color: #E4405F;
+      background: linear-gradient(135deg, #E4405F 0%, #FF6B9D 50%, #C471ED 100%);
+      color: var(--white);
+    }
+
+    .social-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--white);
+      transform: translateZ(0);
+    }
+
+    .social-icon svg {
+      width: 40px;
+      height: 40px;
+      transform: translateZ(0);
+    }
+
+    .facebook-card .social-icon {
+      color: #1877F2;
+    }
+
+    .instagram-card .social-icon {
+      color: #E4405F;
+    }
+
+    .social-network-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      transform: translateZ(0);
+    }
+
+    .facebook-card h3,
+    .instagram-card h3 {
+      color: var(--white);
+    }
+
+    .social-network-card p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      transform: translateZ(0);
+    }
+
+    .facebook-card p,
+    .instagram-card p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .memories-message {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .memories-message p {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      transform: translateZ(0);
+    }
+
+    
+    .money-gift-section {
+      background: var(--cream) !important;
+      opacity: 1 !important;
+      transform: none !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .money-gift-section .section-title {
+      color: var(--primary);
+      font-size: 3rem;
+      transform: translateZ(0);
+    }
+
+    .money-gift-section .section-subtitle {
+      color: var(--primary);
+      font-size: 1.4rem;
+      font-style: italic;
+      opacity: 0.8;
+      transform: translateZ(0);
+    }
+
+    .money-gift-content {
+      position: relative;
+      z-index: 2;
+      margin-top: 4rem;
+    }
+
+    .money-gift-icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .gift-icon-item {
+      text-align: center;
+      transform: translateZ(0);
+    }
+
+    .gift-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+      transform: translateZ(0);
+    }
+
+    .gift-icon-item span {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.3rem;
+      color: var(--primary);
+      font-weight: 600;
+      transform: translateZ(0);
+    }
+
+    .plus-icon {
+      font-size: 2rem;
+      color: var(--accent);
+      font-weight: bold;
+      transform: translateZ(0);
+    }
+
+    .money-gift-card {
+      background: var(--white);
+      border-radius: 25px;
+      padding: 3rem;
+      box-shadow: var(--shadow-medium);
+      border: 3px solid var(--accent-light);
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+      transition: transform 0.2s ease;
+    }
+
+    .money-gift-card:hover {
+      transform: translateY(-2px) translateZ(0);
+    }
+
+    .money-gift-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-primary);
+      transform: translateZ(0);
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      transform: translateZ(0);
+    }
+
+    .card-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 0;
+      transform: translateZ(0);
+    }
+
+    .card-content p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 2rem;
+      transform: translateZ(0);
+    }
+
+    .tradition-note {
+      background: linear-gradient(135deg, var(--accent-light), var(--accent));
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      position: relative;
+      transform: translateZ(0);
+    }
+
+    .tradition-icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      transform: translateZ(0);
+    }
+
+    .tradition-note em {
+      color: var(--primary);
+      font-size: 1.1rem;
+      font-family: 'Dancing Script', cursive;
+      font-weight: 600;
+      transform: translateZ(0);
+    }
+
+    
+    .section {
+      padding: 8rem 0;
+      position: relative;
+      content-visibility: auto;
+      contain-intrinsic-size: 0 800px;
+    }
+
+    
+    #story {
+      background: var(--white) !important;
+    }
+    
+    #gallery {
+      background: var(--white) !important;
+    }
+    
+    #details {
+      background: var(--cream) !important;
+      border-top: 1px solid var(--gold-overlay);
+      border-bottom: 1px solid var(--gold-overlay);
+    }
+    
+    #countdown {
+      background: var(--white) !important;
+    }
+    
+    #social-memories {
+      background: var(--cream) !important;
+      border-top: 1px solid var(--gold-overlay);
+      border-bottom: 1px solid var(--gold-overlay);
+    }
+    
+    #money-gift {
+      background: var(--white) !important;
+    }
+    
+    #aaron-message {
+      background: var(--cream) !important;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 300;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      transform: translateZ(0);
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      width: 80px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .section-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.6;
+      transform: translateZ(0);
+    }
+
+    
+    .aaron-message-container {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    
+    .letter-image {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      z-index: 10;
+      transform: translateZ(0);
+    }
+
+    .letter-image.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.5) translateZ(0);
+    }
+
+    .animated-mail {
+      position: absolute;
+      height: 150px;
+      width: 200px;
+      transition: .4s;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+    }
+
+    .animated-mail .body {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 100px 200px;
+      border-color: transparent transparent var(--accent) transparent;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .animated-mail .top-fold {
+      position: absolute;
+      top: 50px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 100px 0 100px;
+      transform-origin: 50% 0%;
+      transition: transform .4s .4s, z-index .2s .4s;
+      border-color: #9a7534 transparent transparent transparent;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .animated-mail .back-fold {
+      position: absolute;
+      bottom: 0;
+      width: 200px;
+      height: 100px;
+      background: #9a7534;
+      z-index: 0;
+      transform: translateZ(0);
+    }
+
+    .animated-mail .left-fold {
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 50px 0 50px 100px;
+      border-color: transparent transparent transparent var(--accent);
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .animated-mail .letter {
+      left: 20px;
+      bottom: 0px;
+      position: absolute;
+      width: 160px;
+      height: 60px;
+      background: var(--white);
+      z-index: 1;
+      overflow: hidden;
+      transition: .4s .2s;
+      transform: translateZ(0);
+    }
+
+    .animated-mail .letter .letter-border {
+      height: 10px;
+      width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        var(--accent),
+        var(--accent) 8px,
+        transparent 8px,
+        transparent 18px
+      );
+      transform: translateZ(0);
+    }
+
+    .animated-mail .letter .letter-title {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 40%;
+      background: var(--accent);
+      transform: translateZ(0);
+    }
+
+    .animated-mail .letter .letter-context {
+      margin-top: 10px;
+      margin-left: 5px;
+      height: 10px;
+      width: 20%;
+      background: var(--accent);
+      transform: translateZ(0);
+    }
+
+    .animated-mail .letter .letter-stamp {
+      margin-top: 15px;
+      margin-left: 120px;
+      border-radius: 100%;
+      height: 30px;
+      width: 30px;
+      background: var(--accent);
+      opacity: 0.3;
+      transform: translateZ(0);
+    }
+
+    .shadow {
+      position: absolute;
+      top: 200px;
+      left: 50%;
+      width: 400px;
+      height: 30px;
+      transition: .4s;
+      transform: translateX(-50%) translateZ(0);
+      border-radius: 100%;
+      background: radial-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+    }
+
+    .click-hint {
+      position: absolute;
+      bottom: -40px;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 600;
+      white-space: nowrap;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: translateX(-50%) translateY(0) translateZ(0); }
+      50% { opacity: 1; transform: translateX(-50%) translateY(-5px) translateZ(0); }
+    }
+
+    
+    .letter-image:hover .animated-mail {
+      transform: translateX(-50%) translateY(50px) translateZ(0);
+    }
+
+    .letter-image:hover .animated-mail .top-fold {
+      transition: transform .4s, z-index .2s;
+      transform: rotateX(180deg) translateZ(0);
+      z-index: 0;
+    }
+
+    .letter-image:hover .animated-mail .letter {
+      height: 180px;
+    }
+
+    .letter-image:hover .shadow {
+      width: 250px;
+    }
+
+    
+    .aaron-message-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8) translateZ(0);
+      background: var(--white);
+      padding: 4rem 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-heavy);
+      border: 3px solid var(--accent-light);
+      max-width: 800px;
+      width: 90%;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 5;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .aaron-message-card.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translate(-50%, -50%) scale(1) translateZ(0);
+    }
+
+    .aaron-message-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: var(--gradient-primary);
+      transform: translateZ(0);
+    }
+
+    .aaron-message-card::after {
+      content: '💕';
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2rem;
+      opacity: 0.3;
+      transform: translateZ(0);
+    }
+
+    .close-message {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      line-height: 1;
+      padding: 0;
+      transform: translateZ(0);
+    }
+
+    .close-message:hover {
+      background: var(--primary);
+      transform: rotate(90deg) translateZ(0);
+    }
+
+    .message-header h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+      transform: translateZ(0);
+    }
+
+    .message-header h3::after {
+      content: '';
+      position: absolute;
+      bottom: -0.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateZ(0);
+      width: 100px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .message-content p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      transform: translateZ(0);
+    }
+
+    .message-finale {
+      font-size: 1.3rem !important;
+      color: var(--accent) !important;
+      text-align: center !important;
+      margin-top: 2rem !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      transform: translateZ(0);
+    }
+
+    
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      transform: translateZ(0);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-heavy);
+      transform: translateZ(0);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      background: var(--white);
+      color: var(--primary);
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateZ(0);
+    }
+
+    .lightbox-close:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    
+    .footer {
+      background: var(--gradient-navy);
+      color: var(--white);
+      text-align: center;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+      transform: translateZ(0);
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gradient-primary);
+      transform: translateZ(0);
+    }
+
+    .footer p {
+      font-size: 1rem;
+      opacity: 0.9;
+      position: relative;
+      z-index: 2;
+      transform: translateZ(0);
+    }
+
+    .footer .heart {
+      color: var(--accent-light);
+      font-size: 1.2rem;
+      margin: 0 0.5rem;
+      transform: translateZ(0);
+    }
+
+    
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--white);
+      color: var(--primary);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: var(--shadow-heavy);
+      z-index: 3000;
+      transform: translateX(400px) translateZ(0);
+      transition: var(--transition);
+      border-left: 4px solid var(--accent);
+      border: 2px solid var(--accent-light);
+    }
+
+    .toast.show {
+      transform: translateX(0) translateZ(0);
+    }
+
+    
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      
+      .welcome-overlay {
+        animation: none !important;
+      }
+      
+      .letter-image,
+      .aaron-message-card {
+        transition: none !important;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-title {
+        font-size: 3rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .story-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      .letter-image {
+        transform: scale(0.8) translateZ(0);
+      }
+
+      .aaron-message-card {
+        width: 95%;
+        padding: 2.5rem 1.5rem;
+        max-height: 85vh;
+      }
+
+      .message-header h3 {
+        font-size: 1.5rem;
+      }
+
+      .message-content p {
+        font-size: 1rem;
+      }
+
+      .click-hint {
+        font-size: 0.85rem;
+        bottom: -50px;
+      }
+      
+      .parents-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+      
+      .parents-image {
+        width: 250px;
+        height: 250px;
+      }
+      
+      .parents-blessing-section .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .parents-blessing-section .section-title strong {
+        font-size: 3rem;
+      }
+      
+      .countdown-container {
+        gap: 1rem;
+      }
+      
+      .countdown-card {
+        min-width: 80px;
+        padding: 1.5rem 1rem;
+      }
+      
+      .countdown-number {
+        font-size: 2.5rem;
+      }
+      
+      .countdown-separator {
+        font-size: 2rem;
+      }
+      
+      .countdown-section .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .hashtag-card {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .hashtag-text {
+        font-size: 2.5rem;
+      }
+      
+      .social-networks {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      
+      .social-memories-section .section-title {
+        font-size: 2.5rem;
+      }
+      
+      .money-gift-icons {
+        gap: 1rem;
+      }
+      
+      .gift-icon {
+        font-size: 3rem;
+      }
+      
+      .plus-icon {
+        font-size: 1.5rem;
+      }
+      
+      .money-gift-card {
+        padding: 2rem;
+        margin: 0 1rem;
+      }
+      
+      .money-gift-section .section-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-text">¡Bienvenidos!</div>
+    <div class="welcome-subtext">Keyla & Sergio</div>
+  </div>
+
+  
+  <nav class="nav" id="nav">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">K & S</a>
+      <ul class="nav-links">
+        <li><a href="#story">Nuestra Historia</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#details">Detalles</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-date">Noviembre 15, 2025</div>
+      <h1 class="hero-title font-display">Keyla & Sergio</h1>
+      <div class="hero-script font-script">Juntos por siempre</div>
+      <p class="hero-subtitle">Acompáñanos mientras celebramos nuestro amor y comenzamos nuestro camino como uno</p>
+      <a href="#details" class="hero-cta">Ver Detalles</a>
+    </div>
+    <div class="scroll-indicator"></div>
+  </section>
+
+  
+  <section class="section parents-blessing-section" id="parents-blessing">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Con la bendición de Dios y nuestros <strong>padres</strong></h2>
+      </div>
+      
+      <div class="parents-grid">
+        <div class="parents-side bride-parents">
+          <div class="parents-image">
+            <img src="./images/3ba98149-94bc-4e2a-bde1-ab1f60e01196.jpeg" alt="Padres de la Novia" loading="lazy" decoding="async" width="946" height="1419">
+          </div>
+          <div class="parents-info">
+            <h3>Padres de la Novia</h3>
+            <div class="parent-names">
+              <p class="parent-name">Jesús Reséndez Ramírez</p>
+              <p class="parent-name">Nereida Vázquez Nava</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="parents-side groom-parents">
+          <div class="parents-image">
+            <img src="./images/585f0697-54a5-47fb-a2ac-977b1de75d70.jpeg" alt="Padres del Novio" loading="lazy" decoding="async" width="1066" height="1600">
+          </div>
+          <div class="parents-info">
+            <h3>Padres del Novio</h3>
+            <div class="parent-names">
+              <p class="parent-name">Sara Elisa Reyes Mendoza</p>
+              <p class="parent-name">Oscar Ortega Vergel</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="story">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Nuestra Historia de Amor</h2>
+        <p class="section-subtitle">Todas las historias de amor son hermosas, pero la nuestra es nuestra favorita</p>
+      </div>
+      
+      <div class="story-grid">
+        <div class="story-content">
+          <h3>Cómo nos Conocimos</h3>
+          <p>En una mañana lluviosa de martes en nuestra cafetería favorita, ambos alcanzamos el último croissant de chocolate. Lo que comenzó como una risa por un pastel se convirtió en horas de conversación y el inicio de nuestro hermoso viaje juntos.</p>
+          
+          <h3>La Propuesta</h3>
+          <p>Durante una caminuta al amanecer en nuestro lugar especial junto al lago, Sergio se arrodilló mientras la luz dorada pintaba el cielo. Con lágrimas de alegría y el anillo más hermoso, Keyla dijo sí para siempre.</p>
+          
+          <h3>Nuestro Futuro</h3>
+          <p>Ahora estamos listos para comenzar el próximo capítulo de nuestra historia, y no podemos imaginar celebrar sin las personas que han hecho nuestras vidas tan especiales. ¡Acompáñanos mientras decimos "sí, acepto" y bailamos toda la noche!</p>
+        </div>
+        
+        <div class="story-image">
+          <img src="./images/e26c026d-a6de-4cfd-a142-8a5fb6c63684.jpeg" alt="Keyla y Sergio">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Nuestros Momentos</h2>
+        <p class="section-subtitle">Memorias capturadas de nuestro viaje juntos</p>
+      </div>
+      
+      <div class="gallery">
+        <div class="gallery-grid" id="galleryGrid">
+          <div class="gallery-item">
+            <img src="./images/2046fb83-66cf-42ac-bf49-c72f2ed1412a.jpeg" alt="Keyla y Sergio - Momento Especial 1" loading="lazy" decoding="async" width="878" height="1317">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/436fc6ea-a2bc-433d-91d9-5b88139e8e69.jpeg" alt="Keyla y Sergio - Momento Especial 2" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/585f0697-54a5-47fb-a2ac-977b1de75d70.jpeg" alt="Keyla y Sergio - Momento Especial 3" loading="lazy" decoding="async" width="1066" height="1600">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/64adbbba-d3ba-4044-ae55-1653246d0954.jpeg" alt="Keyla y Sergio - Momento Especial 4" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/9fafa3c3-cf0a-4c50-b6f9-db4cd54c72c6.jpeg" alt="Keyla y Sergio - Momento Especial 5" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/b5c9c7d4-f016-452c-91ab-8894ef2c6ac1.jpeg" alt="Keyla y Sergio - Momento Especial 6" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/d5bf6130-7c8c-4b21-8a81-ee133a0325a7.jpeg" alt="Keyla y Sergio - Momento Especial 7" loading="lazy" decoding="async" width="800" height="1200">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/e26c026d-a6de-4cfd-a142-8a5fb6c63684.jpeg" alt="Keyla y Sergio - Momento Especial 8" loading="lazy" decoding="async" width="900" height="1350">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/e6d5659f-2ce3-4583-a8c7-9b2d89829aef.jpeg" alt="Keyla y Sergio - Momento Especial 9" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+          <div class="gallery-item">
+            <img src="./images/f889a4d1-05e3-462f-a961-1857427e0a9b.jpeg" alt="Keyla y Sergio - Momento Especial 10" loading="lazy" decoding="async" width="1000" height="1500">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="details">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Detalles de la Boda</h2>
+        <p class="section-subtitle">Todo lo que necesitas saber sobre nuestro día especial</p>
+      </div>
+      
+      <div class="details-grid">
+        <div class="detail-card">
+          <div class="detail-icon">🕐</div>
+          <h3>Cronograma</h3>
+          <p><span class="highlight">Ceremonia:</span> 3:30 PM</p>
+        </div>
+        
+        <div class="detail-card">
+          <div class="detail-icon">📍</div>
+          <h3>Lugar</h3>
+          <p><span class="highlight">Ceremonia y Recepción</span></p>
+          <p>Porfirio Diaz 127</p>
+          <p>Sin Nombre de Col 4</p>
+          <p>88770, Reynosa Tamps.</p>
+        </div>
+        
+        <div class="detail-card">
+          <div class="detail-icon">👗</div>
+          <h3>Código de Vestimenta</h3>
+          <p><span class="highlight">Semi Formal y no blanco</span></p>
+          <p>Como sugerencia de vestimenta: llevar un zapato cómodo.</p>
+        </div>
+      </div>
+      
+      <div style="margin-top: 4rem; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--shadow-medium);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.1234567890123!2d-98.3456789!3d26.0987654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8665f123456789ab%3A0x123456789abcdef0!2sPorfirio%20Diaz%20127%2C%2088770%20Reynosa%2C%20Tamps.%2C%20Mexico!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" 
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación del Lugar de la Boda - Reynosa, Tamaulipas">
+        </iframe>
+        <div style="text-align: center; margin-top: 1rem; margin-bottom: 2rem;">
+          <a href="https://maps.app.goo.gl/49NmXnqc1jWSXDJu8" 
+             target="_blank" 
+             style="display: inline-block; padding: 0.8rem 2rem; background: var(--gradient-primary); color: var(--white); text-decoration: none; border-radius: 25px; font-weight: 600; transition: var(--transition);">
+            📍 Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section countdown-section" id="countdown">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">¡La Cuenta Regresiva Ha Comenzado!</h2>
+        <p class="section-subtitle">Faltan muy pocos días para nuestra gran celebración</p>
+      </div>
+      
+      <div class="countdown-container">
+        <div class="countdown-card">
+          <div class="countdown-number" id="days">00</div>
+          <div class="countdown-label">Días</div>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="hours">00</div>
+          <div class="countdown-label">Horas</div>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="minutes">00</div>
+          <div class="countdown-label">Minutos</div>
+        </div>
+        <div class="countdown-separator">:</div>
+        <div class="countdown-card">
+          <div class="countdown-number" id="seconds">00</div>
+          <div class="countdown-label">Segundos</div>
+        </div>
+      </div>
+
+      <div class="countdown-message" id="countdownMessage">
+        <p>¡Cada segundo nos acerca más a nuestro día especial! 💕</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section social-memories-section" id="social-memories">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">¡Ayúdanos a Guardar Memorias de Este Gran Día!</h2>
+        <p class="section-subtitle">Comparte con nosotros todas tus fotografías del evento, usando el siguiente #hashtag en todas tus publicaciones de Facebook e Instagram.</p>
+      </div>
+      
+      <div class="hashtag-container">
+        <div class="hashtag-card">
+          <div class="hashtag-icon">📸</div>
+          <div class="hashtag-text">#Sergio&Keyla</div>
+          <button class="copy-hashtag-btn" onclick="copyHashtag()">
+            <span class="copy-icon">📋</span>
+            Copiar Hashtag
+          </button>
+        </div>
+      </div>
+
+      <div class="social-networks">
+        <div class="social-network-card facebook-card" onclick="openFacebook()">
+          <div class="social-icon">
+            <svg xmlns="http://
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+          <h3>Facebook</h3>
+          <p>Publica tus fotos del evento en Facebook usando <strong>#Sergio&Keyla</strong></p>
+          <div class="click-hint">👆 Haz clic para abrir Facebook</div>
+        </div>
+        
+        <div class="social-network-card instagram-card" onclick="openInstagram()">
+          <div class="social-icon">
+            <svg xmlns="http://
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <h3>Instagram</h3>
+          <p>Comparte tus stories e imágenes en Instagram con <strong>#Sergio&Keyla</strong></p>
+          <div class="click-hint">👆 Haz clic para abrir Instagram</div>
+        </div>
+      </div>
+
+      <div class="memories-message">
+        <p>¡Cada foto que compartas será un recuerdo invaluable de nuestro día especial! 💕📷</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section money-gift-section" id="money-gift">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Si No Tienes Tiempo</h2>
+        <p class="section-subtitle">o no sabes qué regalarnos...</p>
+      </div>
+      
+      <div class="money-gift-content">
+        <div class="money-gift-icons">
+          <div class="gift-icon-item">
+            <div class="gift-icon">💌</div>
+            <span>Sobre</span>
+          </div>
+          <div class="plus-icon">+</div>
+          <div class="gift-icon-item">
+            <div class="gift-icon">💰</div>
+            <span>Dinero</span>
+          </div>
+          <div class="plus-icon">=</div>
+          <div class="gift-icon-item">
+            <div class="gift-icon">🎁</div>
+            <span>Regalo</span>
+          </div>
+        </div>
+
+        <div class="money-gift-card">
+          <div class="card-header">
+            <div class="card-icon">🎁</div>
+            <h3>Lluvia de Sobres</h3>
+          </div>
+          <div class="card-content">
+            <p>La lluvia de sobres, es la tradición de regalar dinero en efectivo a los novios en un sobre el día del evento.</p>
+            <div class="tradition-note">
+              <span class="tradition-icon">✨</span>
+              <em>Una hermosa tradición que nos ayudará a comenzar nuestra nueva vida juntos</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="section" id="aaron-message">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title font-display">Mensaje Especial</h2>
+        <p class="section-subtitle">Una dedicatoria de corazón - Haz clic en el sobre para leer</p>
+      </div>
+      
+      <div class="aaron-message-container">
+        
+        <div class="letter-image" id="letterImage">
+          <div class="animated-mail">
+            <div class="back-fold"></div>
+            <div class="letter">
+              <div class="letter-border"></div>
+              <div class="letter-title"></div>
+              <div class="letter-context"></div>
+              <div class="letter-stamp">
+                <div class="letter-stamp-inner"></div>
+              </div>
+            </div>
+            <div class="top-fold"></div>
+            <div class="body"></div>
+            <div class="left-fold"></div>
+          </div>
+          <div class="shadow"></div>
+          <div class="click-hint">Haz clic para abrir ✨</div>
+        </div>
+
+        
+        <div class="aaron-message-card" id="messageCard">
+          <button class="close-message" id="closeMessage">×</button>
+          <div class="message-header">
+            <h3 class="font-script">Este mensaje es de parte de Aaron</h3>
+          </div>
+          
+          <div class="message-content">
+            <p>Me siento inmensamente feliz por Sergio y Keyla.</p>
+            
+            <p>En algún momento de la vida, Sergio se convirtió en uno de mis grandes amigos, tanto que hoy lo considero parte de mi familia.</p>
+            
+            <p>Verlo tan feliz junto a su ahora prometida y futura esposa, Keyla, es algo verdaderamente hermoso.</p>
+            
+            <p>Les deseo todo lo mejor en esta nueva etapa que comienzan juntos: amor, éxito y muchas bendiciones.</p>
+            
+            <p>Manténganse siempre unidos ante cualquier adversidad, y que su amor siga creciendo cada día más.</p>
+            
+            <p class="message-finale"><strong>¡Que viva el amor y que viva su historia juntos!</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer class="footer">
+    <div class="container">
+      <p>Hecho con <span class="heart">♥</span> por Aaron Cerceda</p>
+      <p style="margin-top: 0.5rem; opacity: 0.6;">Noviembre 15, 2025 - Keyla & Sergio</p>
+    </div>
+  </footer>
+
+  
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">×</button>
+    <img src="" alt="" id="lightboxImage">
+  </div>
+
+  
+  <div class="toast" id="toast"></div>
+
+  <script>
+    
+    window.addEventListener('load', () => {
+      
+      document.body.classList.add('no-scroll');
+      
+      setTimeout(() => {
+        startWeddingCelebration();
+        startCountdown(); 
+        initializeLetterAnimation(); 
+      }, 500);
+    });
+
+    function startWeddingCelebration() {
+      
+      setTimeout(() => {
+        const welcomeOverlay = document.getElementById('welcomeOverlay');
+        welcomeOverlay.classList.add('hidden');
+        
+        
+        setTimeout(() => {
+          welcomeOverlay.remove();
+          
+          document.body.classList.remove('no-scroll');
+        }, 1000);
+      }, 2000);
+    }
+
+    
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    function updateNavigation() {
+      const nav = document.getElementById('nav');
+      if (lastScrollY > 100) {
+        nav.classList.add('visible');
+      } else {
+        nav.classList.remove('visible');
+      }
+      ticking = false;
+    }
+
+    
+    window.addEventListener('scroll', () => {
+      lastScrollY = window.scrollY;
+      
+      if (!ticking) {
+        requestAnimationFrame(updateNavigation);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    
+    const galleryGrid = document.getElementById('galleryGrid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    galleryGrid.addEventListener('click', (e) => {
+      const galleryItem = e.target.closest('.gallery-item');
+      if (galleryItem) {
+        const img = galleryItem.querySelector('img');
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+      }
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    
+    function showToast(message, type = 'success') {
+      const toast = document.getElementById('toast');
+      if (!toast) return;
+      
+      toast.textContent = message;
+      toast.className = `toast show ${type}`;
+      
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+
+    
+    function startCountdown() {
+      
+      const weddingDate = new Date('2025-11-15T16:00:00').getTime();
+      let lastUpdate = 0;
+      
+      function updateCountdown(currentTime) {
+        
+        if (currentTime - lastUpdate < 1000) {
+          requestAnimationFrame(updateCountdown);
+          return;
+        }
+        
+        lastUpdate = currentTime;
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+        
+        if (distance < 0) {
+          
+          document.getElementById('days').textContent = '00';
+          document.getElementById('hours').textContent = '00';
+          document.getElementById('minutes').textContent = '00';
+          document.getElementById('seconds').textContent = '00';
+          document.getElementById('countdownMessage').innerHTML = 
+            '<p>¡Es el gran día! ¡Keyla & Sergio se casan hoy! 🎉💕</p>';
+          return;
+        }
+        
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        
+        document.getElementById('days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+        document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        
+        
+        let message = '';
+        if (days > 30) {
+          message = '¡Cada segundo nos acerca más a nuestro día especial! 💕';
+        } else if (days === 1) {
+          message = '¡Mañana es el gran día! ¡No podemos esperar! 💒';
+        }
+        
+        document.getElementById('countdownMessage').innerHTML = `<p>${message}</p>`;
+        
+        
+        requestAnimationFrame(updateCountdown);
+      }
+      
+      
+      requestAnimationFrame(updateCountdown);
+    }
+
+    
+    function copyHashtag() {
+      const hashtag = '#Sergio&Keyla';
+      
+      
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(hashtag).then(() => {
+          showHashtagCopied();
+        }).catch(() => {
+          
+          fallbackCopyTextToClipboard(hashtag);
+        });
+      } else {
+        
+        fallbackCopyTextToClipboard(hashtag);
+      }
+    }
+
+    function fallbackCopyTextToClipboard(text) {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+      
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        showHashtagCopied();
+      } catch (err) {
+        console.error('Fallback: Could not copy text: ', err);
+        showToast('No se pudo copiar el hashtag', 'error');
+      }
+      
+      document.body.removeChild(textArea);
+    }
+
+    function showHashtagCopied() {
+      const button = document.querySelector('.copy-hashtag-btn');
+      const originalText = button.innerHTML;
+      
+      button.innerHTML = '<span class="copy-icon">✅</span> ¡Copiado!';
+      button.style.background = '#4CAF50';
+      button.style.color = 'white';
+      
+      setTimeout(() => {
+        button.innerHTML = originalText;
+        button.style.background = '';
+        button.style.color = '';
+      }, 2000);
+      
+      showToast('¡Hashtag copiado! #Sergio&Keyla', 'success');
+    }
+
+    
+    function openFacebook() {
+      
+      const hashtag = encodeURIComponent('#Sergio&Keyla');
+      
+      
+      if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        
+        window.location.href = `fb://post?hashtag=${hashtag}`;
+        
+        setTimeout(() => {
+          window.open(`https://www.facebook.com/hashtag/sergio&keyla`, '_blank');
+        }, 500);
+      } else {
+        
+        window.open(`https://www.facebook.com/hashtag/sergio&keyla`, '_blank');
+      }
+      
+      showToast('¡Abriendo Facebook! Usa #Sergio&Keyla 📘', 'success');
+    }
+
+    function openInstagram() {
+      
+      const hashtag = 'Sergio&Keyla';
+      
+      
+      if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        
+        window.location.href = `instagram://tag?name=${hashtag}`;
+        
+        setTimeout(() => {
+          window.open(`https://www.instagram.com/explore/tags/sergiokeyla/`, '_blank');
+        }, 500);
+      } else {
+        
+        window.open(`https://www.instagram.com/explore/tags/sergiokeyla/`, '_blank');
+      }
+      
+      showToast('¡Abriendo Instagram! Usa #Sergio&Keyla 📷', 'success');
+    }
+
+    
+    function initializeLetterAnimation() {
+      const letterImage = document.getElementById('letterImage');
+      const messageCard = document.getElementById('messageCard');
+      const closeMessage = document.getElementById('closeMessage');
+
+      if (!letterImage || !messageCard) return;
+
+      
+      letterImage.addEventListener('click', function() {
+        openLetter();
+      });
+
+      
+      if (closeMessage) {
+        closeMessage.addEventListener('click', function() {
+          closeLetter();
+        });
+      }
+
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && messageCard.classList.contains('active')) {
+          closeLetter();
+        }
+      });
+    }
+
+    function openLetter() {
+      const letterImage = document.getElementById('letterImage');
+      const messageCard = document.getElementById('messageCard');
+      
+      if (!letterImage || !messageCard) return;
+
+      
+      letterImage.classList.add('hidden');
+      
+      
+      setTimeout(() => {
+        messageCard.classList.add('active');
+      }, 400);
+    }
+
+    function closeLetter() {
+      const letterImage = document.getElementById('letterImage');
+      const messageCard = document.getElementById('messageCard');
+      
+      if (!letterImage || !messageCard) return;
+
+      
+      messageCard.classList.remove('active');
+      
+      
+      setTimeout(() => {
+        letterImage.classList.remove('hidden');
+      }, 300);
+    }
+  </script>
+
+</body>
+</html>
